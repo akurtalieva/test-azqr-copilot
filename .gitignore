@@ -166,3 +166,6 @@ support-retail-copilot/mlruns
 support-retail-copilot/.chainlit
 
 config.json
+
+# Visual Studio Code 
+.vscode/
