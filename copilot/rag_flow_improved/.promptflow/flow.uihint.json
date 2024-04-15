@@ -1,0 +1,60 @@
+{
+  "nodes": {
+    "llm_call": {
+      "variant_0": {
+        "inputs": {
+          "history": [],
+          "question": [],
+          "prompt_text": []
+        }
+      }
+    },
+    "customer_lookup": {
+      "variant_0": {
+        "inputs": {
+          "customerId": []
+        }
+      }
+    },
+    "rewrite_query": {
+      "variant_0": {
+        "inputs": {
+          "query": [],
+          "chat_history": [],
+          "customer_data": []
+        }
+      }
+    },
+    "question_embeddings": {
+      "variant_0": {
+        "inputs": {
+          "input": []
+        }
+      }
+    },
+    "rag_search": {
+      "variant_0": {
+        "inputs": {
+          "question": [],
+          "embedding": []
+        }
+      }
+    },
+    "customer_prompt": {
+      "variant_0": {
+        "inputs": {
+          "customer": [],
+          "documentation": []
+        }
+      }
+    },
+    "context": {
+      "variant_0": {
+        "inputs": {
+          "citations": [],
+          "customer_data": []
+        }
+      }
+    }
+  }
+}

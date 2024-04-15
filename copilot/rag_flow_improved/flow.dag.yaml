@@ -1,0 +1,102 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+inputs:
+  chat_history:
+    type: list
+    default: []
+    is_chat_history: true
+    is_chat_input: false
+  question:
+    type: string
+    default: ""
+    is_chat_history: false
+    is_chat_input: true
+  customerId:
+    type: string
+    default: "1"
+    is_chat_history: false
+    is_chat_input: false
+outputs:
+  answer:
+    type: string
+    reference: ${llm_call.output}
+  citations:
+    type: string
+    reference: ${rag_search.output}
+  customer_data:
+    type: string
+    reference: ${customer_lookup.output}
+  context:
+    type: string
+    reference: ${context.output}
+  query_rewrite:
+    type: string
+    reference: ${rewrite_query.output}
+nodes:
+- name: customer_lookup
+  type: python
+  source:
+    type: code
+    path: customer_lookup.py
+  inputs:
+    conn: azqr-cosmos
+    customerId: ${inputs.customerId}
+- name: rewrite_query
+  type: python
+  source:
+    type: code
+    path: rewrite_query.py
+  inputs:
+    query: ${inputs.question}
+    chat_history: ${inputs.chat_history}
+    customer_data: ${customer_lookup.output}
+    azure_open_ai_connection: azure-ai
+    open_ai_deployment: gpt-35-turbo
+- name: question_embeddings
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: azure-ai
+    deployment_name: text-embedding-ada-002
+    input: ${rewrite_query.output}
+- name: rag_search
+  type: python
+  source:
+    type: code
+    path: rag_search.py
+  inputs:
+    search: azqr-search
+    question: ${inputs.question}
+    index_name: azure-well-architected
+    embedding: ${question_embeddings.output}
+- name: context
+  type: python
+  source:
+    type: code
+    path: context.py
+  inputs:
+    citations: ${rag_search.output}
+    customer_data: ${customer_lookup.output}
+- name: customer_prompt
+  type: prompt
+  source:
+    type: code
+    path: customer_prompt.jinja2
+  inputs:
+    customer: ${customer_lookup.output}
+    documentation: ${rag_search.output}
+- name: llm_call
+  type: llm
+  source:
+    type: code
+    path: llm_call.jinja2
+  inputs:
+    deployment_name: gpt-4
+    temperature: 0.7
+    max_tokens: 2000
+    history: ${inputs.chat_history}
+    question: ${inputs.question}
+    prompt_text: ${customer_prompt.output}
+  connection: azure-ai
+  api: chat
