@@ -1,0 +1,8 @@
+requests
+python-dotenv
+tiktoken
+openai
+promptflow
+promptflow-tools
+azure-cosmos
+azure-search-documents
