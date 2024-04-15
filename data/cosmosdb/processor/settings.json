@@ -1,0 +1,10 @@
+{
+    "metadata": {
+        "customers": "../../input/customers.json",
+        "csv_path": "../../azqr/*.csv",      
+        "json_report": "../upload/azqr_report_example_01.json"
+    },
+    "metaprompt": {
+        "create_json": "createjson.txt"
+    }
+}
