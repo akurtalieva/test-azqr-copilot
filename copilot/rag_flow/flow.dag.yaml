@@ -1,0 +1,87 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Flow.schema.json
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  chat_history:
+    type: list
+    is_chat_history: true
+    default: []
+  question:
+    type: string
+    is_chat_input: true
+    default: ¿Que puedes decirme acerca de mis recursos?
+  customerId:
+    type: string
+    default: "1"
+outputs:
+  answer:
+    type: string
+    reference: ${llm_call.output}
+    is_chat_output: true
+  citations:
+    type: string
+    reference: ${rag_search.output}
+  customer_data:
+    type: string
+    reference: ${customer_lookup.output}
+  context:
+    type: string
+    reference: ${context.output}
+nodes:
+- name: llm_call
+  type: llm
+  source:
+    type: code
+    path: llm_call.jinja2
+  inputs:
+    deployment_name: gpt-4
+    max_tokens: 256
+    temperature: 0.7
+    question: ${inputs.question}
+    prompt_text: ${customer_prompt.output}
+    history: ${inputs.chat_history}
+  connection: azure-ai
+  api: chat
+- name: customer_lookup
+  type: python
+  source:
+    type: code
+    path: customer_lookup.py
+  inputs:
+    conn: azqr-cosmos
+    customerId: ${inputs.customerId}
+- name: question_embedding
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: azure-ai
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.question}
+- name: rag_search
+  type: python
+  source:
+    type: code
+    path: rag_search.py
+  inputs:
+    search: azqr-search
+    question: ${inputs.question}
+    index_name: azure-well-architected
+    embedding: ${question_embedding.output}
+- name: context
+  type: python
+  source:
+    type: code
+    path: context.py
+  inputs:
+    citations: ${rag_search.output}
+    customer_data: ${customer_lookup.output}
+- name: customer_prompt
+  type: prompt
+  source:
+    type: code
+    path: customer_prompt.jinja2
+  inputs:
+    customer: ${customer_lookup.output}
+    documentation: ${rag_search.output}
