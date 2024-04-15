@@ -6,3 +6,4 @@ promptflow
 promptflow-tools
 azure-cosmos
 azure-search-documents
+langchain
