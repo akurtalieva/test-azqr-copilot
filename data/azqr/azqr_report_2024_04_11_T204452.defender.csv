@@ -1,0 +1,16 @@
+Subscription,Name,Tier,Deprecated
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,VirtualMachines,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,SqlServers,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,AppServices,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,StorageAccounts,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,SqlServerVirtualMachines,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,KubernetesService,Free,true
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,ContainerRegistry,Free,true
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,KeyVaults,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,Dns,Standard,true
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,Arm,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,OpenSourceRelationalDatabases,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,CosmosDbs,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,Containers,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,CloudPosture,Standard,false
+a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2,Api,Free,false
