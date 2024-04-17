@@ -7,7 +7,7 @@ inputs:
     is_chat_input: false
   question:
     type: string
-    default: ""
+    default: ¿Mi almacenamiento en Azure es seguro?
     is_chat_history: false
     is_chat_input: true
   customerId:
