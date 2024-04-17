@@ -7,3 +7,7 @@ promptflow-tools
 azure-cosmos
 azure-search-documents
 langchain
+ipykernel 
+keyrings.alt
+unstructured
+markdown
