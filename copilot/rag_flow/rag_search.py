@@ -26,7 +26,7 @@ def retrieve_documentation(question: str, index_name: str, embedding: List[float
       semantic_configuration_name='default', 
       query_caption=QueryCaptionType.EXTRACTIVE, 
       query_answer=QueryAnswerType.EXTRACTIVE,
-      top=2
+      top=5
   )
 
   docs = [{"id": doc["id"],  "content": doc["content"]}
