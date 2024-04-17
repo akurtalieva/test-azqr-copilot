@@ -9,7 +9,9 @@ rm CascadiaCode.zip
 
 ## Install Oh-my-posh 
 # https://ohmyposh.dev/docs/installation/linux
-curl -s https://ohmyposh.dev/install.sh | bash -s
+sudo curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
+conda init
 echo "alias ll='ls -alF'" >> ~/.bashrc
 echo 'eval "$(oh-my-posh init bash --config /usr/local/share/omp-templates/almeida.omp.json)" ' >> ~/.bashrc
+echo "conda activate azureai" >> ~/.bashr_profile
