@@ -1,0 +1,906 @@
+{
+  "answer": "¡Hola DataExperts! 🤗\n\nTus recursos de almacenamiento en Azure están diseñados con la seguridad en mente. Aquí hay algunas recomendaciones para mejorar la seguridad de tus cuentas de almacenamiento:\n\n1. Habilita Azure Defender para todas tus cuentas de almacenamiento. Azure Defender proporciona una capa adicional de inteligencia de seguridad que detecta intentos inusuales y potencialmente dañinos para acceder o explotar cuentas de almacenamiento[^1741^].\n2. Habilita el borrado suave para los datos de blob. Esto te permite recuperar datos de blob después de que hayan sido eliminados[^1741^].\n3. Usa Microsoft Entra ID para autorizar el acceso a los datos de blob. Proporciona una seguridad superior y facilidad de uso sobre la Shared Key[^1741^].\n4. Tu almacenamiento en Azure se cifra automáticamente con cifrados de bloque cuando los datos se mantienen en una cuenta de almacenamiento[^2821^].\n\nSegún el análisis con Azqr, se recomendó que tu cuenta de almacenamiento debería usar solo HTTPS[^HttpsOnly^] y debería tener un SLA[^StorageSLA^].\n\nEspero que esta información te sea útil. ¡No dudes en preguntar si tienes más preguntas! 😊\n\n[^1741^]: [Storage Accounts and Security](https://docs.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer)\n[^2821^]: [Encryption Strategy Recommendations](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest)\n[^HttpsOnly^]: [HTTPS Only Storage](https://learn.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer)\n[^StorageSLA^]: [Storage SLA](https://www.azure.cn/en-us/support/sla/storage/)\n",
+  "citations": [
+    {
+      "id": "1741",
+      "content": "---\n\ntitle: Storage Accounts and security\n\ndescription: Focuses on the Storage Accounts service used in the Storage solution to provide best-practice, configuration recommendations, and design considerations related to Security.\n\nRecommendation Description Enable Azure Defender for all your storage accounts. Azure Defender for Azure Storage provides an extra layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit storage accounts. Security alerts are triggered in Azure Security Center when anomalies in activity occur. Alerts are also sent through email to subscription administrators, with details of suspicious activity and recommendations on how to investigate, and remediate threats. For more information, reference Configure Azure Defender for Azure Storage . Turn on soft delete for blob data. Soft delete for Azure Storage blobs enables you to recover blob data after it has been deleted. Use Microsoft Entra ID to authorize access to blob data. Microsoft Entra ID provides superior security and ease of use over Shared Key for authorizing requests to blob storage. It's recommended to use Microsoft Entra authorization with your blob and queue applications when"
+    },
+    {
+      "id": "1737",
+      "content": "---\n\ntitle: Storage Accounts and security\n\ndescription: Focuses on the Storage Accounts service used in the Storage solution to provide best-practice, configuration recommendations, and design considerations related to Security.\n\nTo understand how an Azure storage account boosts security for your application workload, reference the following articles:\n\nAzure security baseline for Azure Storage\n\nAzure Storage encryption for data at rest\n\nUse private endpoints for Azure Storage\n\nThe following sections include design considerations, a configuration checklist, and recommended configuration options specific to Azure storage accounts and security.\n\nDesign considerations\n\nAzure storage accounts include the following design considerations:\n\nStorage account names must be between three and 24 characters and may contain numbers, and lowercase letters only.\n\nFor current SLA specifications, reference SLA for Storage Accounts.\n\nGo to Azure Storage redundancy to determine which redundancy option is best for a specific scenario.\n\nStorage account names must be unique within Azure. No two storage accounts can have the same name.\n\nChecklist\n\nHave you configured your Azure Storage Account with security in mind?"
+    },
+    {
+      "id": "1740",
+      "content": "---\n\ntitle: Storage Accounts and security\n\ndescription: Focuses on the Storage Accounts service used in the Storage solution to provide best-practice, configuration recommendations, and design considerations related to Security.\n\nConfiguration recommendations\n\nConsider the following recommendations to optimize security when configuring your Azure Storage Account:"
+    },
+    {
+      "id": "2821",
+      "content": "---\n\ntitle: Encryption strategy recommendations\n\ndescription: Learn about recommendations for encryption, including encryption mechanisms, encryption keys, encryption algorithms, hashes, checksums, and secret management.\n\nAzure Key Vault Premium and Managed-HSM further enhances the offering by including confidential computing capabilites and Secure Key Release which supports a policy to ensure that that a key is only ever released to a workload that can cryptographically prove it is executing inside a Trusted Execution Environment (TEE).\n\nData-at-rest protection\n\nAzure Storage automatically encrypts your data with block ciphers when the data is persisted to a storage account. For Azure Blob Storage and Azure Queue Storage, Storage also provides client-side encryption via libraries.\n\nFor more information, see Storage encryption.\n\nAzure Virtual Machines has disk files that serve as virtual storage volumes. You can encrypt the virtual disk files so the contents can't be accessed."
+    },
+    {
+      "id": "2822",
+      "content": "---\n\ntitle: Encryption strategy recommendations\n\ndescription: Learn about recommendations for encryption, including encryption mechanisms, encryption keys, encryption algorithms, hashes, checksums, and secret management.\n\nManaged disks can be exported from the portal. Server-side encryption and encryption at host can protect data only after it's exported. However, you should protect data during the export process. You can use Azure Disk Encryption to protect and safeguard your data during the export process.\n\nAzure offers several encryption options for managed disks. For more information, see Overview of managed disk encryption options.\n\nSQL Database offers a transparent data encryption feature that's used to encrypt a database file at the page level.\n\nData-in-transit protection\n\nWith Key Vault, you can provision, manage, and deploy public and private Secure Sockets Layer (SSL) or TLS certificates. You can use the certificates with Azure and with your internal connected resources.\n\nData-in-use protection\n\nSpecific services in Azure offer the ability to protect data while it's being computed upon within the physical CPU and memory of a host using Azure confidential computing."
+    }
+  ],
+  "customer_data": {
+    "id": "1",
+    "name": "DataExperts",
+    "subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+    "tenant": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+    "advisor": [
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "8d2c636f-918d-4ef6-8454-8f5f4b086e72",
+        "Type": "Microsoft.Subscriptions/subscriptions",
+        "Category": "HighAvailability",
+        "Description": "Create an Azure Service Health alert",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "Maya01-vm01_OsDisk_1_288aebbc91334375a77a78ec91ea8c1d",
+        "Type": "MICROSOFT.COMPUTE/DISKS",
+        "Category": "HighAvailability",
+        "Description": "Use Azure Disks with Zone Redundant Storage for higher resiliency and availability",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "SecLab-VM01_OsDisk_1_88c2f1cd4c8849ababac7a9a3b2583df",
+        "Type": "MICROSOFT.COMPUTE/DISKS",
+        "Category": "HighAvailability",
+        "Description": "Use Azure Disks with Zone Redundant Storage for higher resiliency and availability",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "azurebrains",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "globalai",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "utopiabar",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "stazurebrain079813324935",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "cs48d2c636f918dx4ef6x845",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "contosochatsa",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "stcontosokrcmojyj45dxq",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "steuropeaihu797433845466",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "sagenailab",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Category": "HighAvailability",
+        "Description": "Enable Soft Delete to protect your blob data",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "globalai-vnet",
+        "Type": "MICROSOFT.NETWORK/VIRTUALNETWORKS",
+        "Category": "HighAvailability",
+        "Description": "Use NAT gateway for outbound connectivity",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "globalaies-0f21c57227-vnet",
+        "Type": "MICROSOFT.NETWORK/VIRTUALNETWORKS",
+        "Category": "HighAvailability",
+        "Description": "Use NAT gateway for outbound connectivity",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "telegram-proxy-vm01-vnet",
+        "Type": "MICROSOFT.NETWORK/VIRTUALNETWORKS",
+        "Category": "HighAvailability",
+        "Description": "Use NAT gateway for outbound connectivity",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "telegram-proxy-vm01",
+        "Type": "MICROSOFT.COMPUTE/VIRTUALMACHINES",
+        "Category": "HighAvailability",
+        "Description": "Enable Backups on your Virtual Machines",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "cosmos-contosokrcmojyj45dxq",
+        "Type": "microsoft.documentdb/databaseaccounts",
+        "Category": "OperationalExcellence",
+        "Description": "Improve resiliency by migrating your Azure Cosmos DB accounts to continuous backup",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "contoso-chat-cosdb",
+        "Type": "microsoft.documentdb/databaseaccounts",
+        "Category": "OperationalExcellence",
+        "Description": "Improve resiliency by migrating your Azure Cosmos DB accounts to continuous backup",
+        "PotentialBenefits": "",
+        "Risk": "",
+        "LearnMoreLink": ""
+      }
+    ],
+    "costs": [],
+    "services": [
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "GlobalAI-ES",
+        "Location": "global",
+        "Type": "Microsoft.Cdn/profiles",
+        "Service Name": "globalaies-291e1bfa2ba58dc55f2a-cdnprofile",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "SLA",
+        "Severity": "High",
+        "Description": "Azure FrontDoor SLA",
+        "Result": "99.99%",
+        "Learn": "https://www.azure.cn/en-us/support/sla/cdn/"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "GlobalAI-ES",
+        "Location": "westeurope",
+        "Type": "Microsoft.Network/virtualNetworks",
+        "Service Name": "globalaies-0f21c57227-vnet",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "Availability Zones",
+        "Severity": "High",
+        "Description": "Virtual Network should have availability zones enabled",
+        "Result": "",
+        "Learn": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview#virtual-networks-and-availability-zones"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "GlobalAI-ES",
+        "Location": "westeurope",
+        "Type": "Microsoft.Network/virtualNetworks",
+        "Service Name": "globalaies-0f21c57227-vnet",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "Reliability",
+        "Severity": "High",
+        "Description": "Virtual NetworK should have at least two DNS servers assigned",
+        "Result": "",
+        "Learn": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances?tabs=redhat#specify-dns-servers"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "GlobalAI-ES",
+        "Location": "westeurope",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Service Name": "globalaies20224c6ab9",
+        "Broken": "false",
+        "Category": "Security",
+        "Subcategory": "HTTPS Only",
+        "Severity": "High",
+        "Description": "Storage Account should use HTTPS only",
+        "Result": "",
+        "Learn": "https://learn.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "GlobalAI-ES",
+        "Location": "westeurope",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Service Name": "globalaies20224c6ab9",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "SKU",
+        "Severity": "High",
+        "Description": "Storage SKU",
+        "Result": "Standard_RAGRS",
+        "Learn": "https://learn.microsoft.com/en-us/rest/api/storagerp/srp_sku_types"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "GlobalAI-ES",
+        "Location": "westeurope",
+        "Type": "Microsoft.Storage/storageAccounts",
+        "Service Name": "globalaies20224c6ab9",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "SLA",
+        "Severity": "High",
+        "Description": "Storage should have a SLA",
+        "Result": "99.99%",
+        "Learn": "https://www.azure.cn/en-us/support/sla/storage/"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "Security",
+        "Location": "northeurope",
+        "Type": "Microsoft.ContainerRegistry/registries",
+        "Service Name": "azurebrains",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "SLA",
+        "Severity": "High",
+        "Description": "ContainerRegistry should have a SLA",
+        "Result": "99.95%",
+        "Learn": "https://www.azure.cn/en-us/support/sla/container-registry/"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "Security",
+        "Location": "northeurope",
+        "Type": "Microsoft.ContainerRegistry/registries",
+        "Service Name": "azurebrains",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "SKU",
+        "Severity": "High",
+        "Description": "ContainerRegistry SKU",
+        "Result": "Standard",
+        "Learn": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "Security",
+        "Location": "westeurope",
+        "Type": "Microsoft.Logic/workflows",
+        "Service Name": "Defender-Logic-Alert",
+        "Broken": "false",
+        "Category": "Security",
+        "Subcategory": "Firewall",
+        "Severity": "High",
+        "Description": "Logic App should limit access to Http Triggers",
+        "Result": "",
+        "Learn": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app?tabs=azure-portal#restrict-access-by-ip-address-range"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Resource Group": "Security",
+        "Location": "westeurope",
+        "Type": "Microsoft.Logic/workflows",
+        "Service Name": "Defender-Logic-Alert",
+        "Broken": "false",
+        "Category": "Reliability",
+        "Subcategory": "SLA",
+        "Severity": "High",
+        "Description": "Logic App should have a SLA",
+        "Result": "99.9%",
+        "Learn": "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1"
+      }
+    ],
+    "defender": [
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "VirtualMachines",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "SqlServers",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "AppServices",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "StorageAccounts",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "SqlServerVirtualMachines",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "KubernetesService",
+        "Tier": "Free",
+        "Deprecated": "true"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "ContainerRegistry",
+        "Tier": "Free",
+        "Deprecated": "true"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "KeyVaults",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "Dns",
+        "Tier": "Standard",
+        "Deprecated": "true"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "Arm",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "OpenSourceRelationalDatabases",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "CosmosDbs",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "Containers",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "CloudPosture",
+        "Tier": "Standard",
+        "Deprecated": "false"
+      },
+      {
+        "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+        "Name": "Api",
+        "Tier": "Free",
+        "Deprecated": "false"
+      }
+    ],
+    "_rid": "MwA0AP4-n9cBAAAAAAAAAA==",
+    "_self": "dbs/MwA0AA==/colls/MwA0AP4-n9c=/docs/MwA0AP4-n9cBAAAAAAAAAA==/",
+    "_etag": "\"6800dae6-0000-4700-0000-661b2b780000\"",
+    "_attachments": "attachments/",
+    "_ts": 1713056632
+  },
+  "context": {
+    "citations": [
+      {
+        "id": "1741",
+        "content": "---\n\ntitle: Storage Accounts and security\n\ndescription: Focuses on the Storage Accounts service used in the Storage solution to provide best-practice, configuration recommendations, and design considerations related to Security.\n\nRecommendation Description Enable Azure Defender for all your storage accounts. Azure Defender for Azure Storage provides an extra layer of security intelligence that detects unusual and potentially harmful attempts to access or exploit storage accounts. Security alerts are triggered in Azure Security Center when anomalies in activity occur. Alerts are also sent through email to subscription administrators, with details of suspicious activity and recommendations on how to investigate, and remediate threats. For more information, reference Configure Azure Defender for Azure Storage . Turn on soft delete for blob data. Soft delete for Azure Storage blobs enables you to recover blob data after it has been deleted. Use Microsoft Entra ID to authorize access to blob data. Microsoft Entra ID provides superior security and ease of use over Shared Key for authorizing requests to blob storage. It's recommended to use Microsoft Entra authorization with your blob and queue applications when"
+      },
+      {
+        "id": "1737",
+        "content": "---\n\ntitle: Storage Accounts and security\n\ndescription: Focuses on the Storage Accounts service used in the Storage solution to provide best-practice, configuration recommendations, and design considerations related to Security.\n\nTo understand how an Azure storage account boosts security for your application workload, reference the following articles:\n\nAzure security baseline for Azure Storage\n\nAzure Storage encryption for data at rest\n\nUse private endpoints for Azure Storage\n\nThe following sections include design considerations, a configuration checklist, and recommended configuration options specific to Azure storage accounts and security.\n\nDesign considerations\n\nAzure storage accounts include the following design considerations:\n\nStorage account names must be between three and 24 characters and may contain numbers, and lowercase letters only.\n\nFor current SLA specifications, reference SLA for Storage Accounts.\n\nGo to Azure Storage redundancy to determine which redundancy option is best for a specific scenario.\n\nStorage account names must be unique within Azure. No two storage accounts can have the same name.\n\nChecklist\n\nHave you configured your Azure Storage Account with security in mind?"
+      },
+      {
+        "id": "1740",
+        "content": "---\n\ntitle: Storage Accounts and security\n\ndescription: Focuses on the Storage Accounts service used in the Storage solution to provide best-practice, configuration recommendations, and design considerations related to Security.\n\nConfiguration recommendations\n\nConsider the following recommendations to optimize security when configuring your Azure Storage Account:"
+      },
+      {
+        "id": "2821",
+        "content": "---\n\ntitle: Encryption strategy recommendations\n\ndescription: Learn about recommendations for encryption, including encryption mechanisms, encryption keys, encryption algorithms, hashes, checksums, and secret management.\n\nAzure Key Vault Premium and Managed-HSM further enhances the offering by including confidential computing capabilites and Secure Key Release which supports a policy to ensure that that a key is only ever released to a workload that can cryptographically prove it is executing inside a Trusted Execution Environment (TEE).\n\nData-at-rest protection\n\nAzure Storage automatically encrypts your data with block ciphers when the data is persisted to a storage account. For Azure Blob Storage and Azure Queue Storage, Storage also provides client-side encryption via libraries.\n\nFor more information, see Storage encryption.\n\nAzure Virtual Machines has disk files that serve as virtual storage volumes. You can encrypt the virtual disk files so the contents can't be accessed."
+      },
+      {
+        "id": "2822",
+        "content": "---\n\ntitle: Encryption strategy recommendations\n\ndescription: Learn about recommendations for encryption, including encryption mechanisms, encryption keys, encryption algorithms, hashes, checksums, and secret management.\n\nManaged disks can be exported from the portal. Server-side encryption and encryption at host can protect data only after it's exported. However, you should protect data during the export process. You can use Azure Disk Encryption to protect and safeguard your data during the export process.\n\nAzure offers several encryption options for managed disks. For more information, see Overview of managed disk encryption options.\n\nSQL Database offers a transparent data encryption feature that's used to encrypt a database file at the page level.\n\nData-in-transit protection\n\nWith Key Vault, you can provision, manage, and deploy public and private Secure Sockets Layer (SSL) or TLS certificates. You can use the certificates with Azure and with your internal connected resources.\n\nData-in-use protection\n\nSpecific services in Azure offer the ability to protect data while it's being computed upon within the physical CPU and memory of a host using Azure confidential computing."
+      }
+    ],
+    "customer_data": {
+      "id": "1",
+      "name": "DataExperts",
+      "subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+      "tenant": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+      "advisor": [
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "8d2c636f-918d-4ef6-8454-8f5f4b086e72",
+          "Type": "Microsoft.Subscriptions/subscriptions",
+          "Category": "HighAvailability",
+          "Description": "Create an Azure Service Health alert",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "Maya01-vm01_OsDisk_1_288aebbc91334375a77a78ec91ea8c1d",
+          "Type": "MICROSOFT.COMPUTE/DISKS",
+          "Category": "HighAvailability",
+          "Description": "Use Azure Disks with Zone Redundant Storage for higher resiliency and availability",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "SecLab-VM01_OsDisk_1_88c2f1cd4c8849ababac7a9a3b2583df",
+          "Type": "MICROSOFT.COMPUTE/DISKS",
+          "Category": "HighAvailability",
+          "Description": "Use Azure Disks with Zone Redundant Storage for higher resiliency and availability",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "azurebrains",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "globalai",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "utopiabar",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "stazurebrain079813324935",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "cs48d2c636f918dx4ef6x845",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "contosochatsa",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "stcontosokrcmojyj45dxq",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "steuropeaihu797433845466",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "sagenailab",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Category": "HighAvailability",
+          "Description": "Enable Soft Delete to protect your blob data",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "globalai-vnet",
+          "Type": "MICROSOFT.NETWORK/VIRTUALNETWORKS",
+          "Category": "HighAvailability",
+          "Description": "Use NAT gateway for outbound connectivity",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "globalaies-0f21c57227-vnet",
+          "Type": "MICROSOFT.NETWORK/VIRTUALNETWORKS",
+          "Category": "HighAvailability",
+          "Description": "Use NAT gateway for outbound connectivity",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "telegram-proxy-vm01-vnet",
+          "Type": "MICROSOFT.NETWORK/VIRTUALNETWORKS",
+          "Category": "HighAvailability",
+          "Description": "Use NAT gateway for outbound connectivity",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "telegram-proxy-vm01",
+          "Type": "MICROSOFT.COMPUTE/VIRTUALMACHINES",
+          "Category": "HighAvailability",
+          "Description": "Enable Backups on your Virtual Machines",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "cosmos-contosokrcmojyj45dxq",
+          "Type": "microsoft.documentdb/databaseaccounts",
+          "Category": "OperationalExcellence",
+          "Description": "Improve resiliency by migrating your Azure Cosmos DB accounts to continuous backup",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "contoso-chat-cosdb",
+          "Type": "microsoft.documentdb/databaseaccounts",
+          "Category": "OperationalExcellence",
+          "Description": "Improve resiliency by migrating your Azure Cosmos DB accounts to continuous backup",
+          "PotentialBenefits": "",
+          "Risk": "",
+          "LearnMoreLink": ""
+        }
+      ],
+      "costs": [],
+      "services": [
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "GlobalAI-ES",
+          "Location": "global",
+          "Type": "Microsoft.Cdn/profiles",
+          "Service Name": "globalaies-291e1bfa2ba58dc55f2a-cdnprofile",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "SLA",
+          "Severity": "High",
+          "Description": "Azure FrontDoor SLA",
+          "Result": "99.99%",
+          "Learn": "https://www.azure.cn/en-us/support/sla/cdn/"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "GlobalAI-ES",
+          "Location": "westeurope",
+          "Type": "Microsoft.Network/virtualNetworks",
+          "Service Name": "globalaies-0f21c57227-vnet",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "Availability Zones",
+          "Severity": "High",
+          "Description": "Virtual Network should have availability zones enabled",
+          "Result": "",
+          "Learn": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview#virtual-networks-and-availability-zones"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "GlobalAI-ES",
+          "Location": "westeurope",
+          "Type": "Microsoft.Network/virtualNetworks",
+          "Service Name": "globalaies-0f21c57227-vnet",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "Reliability",
+          "Severity": "High",
+          "Description": "Virtual NetworK should have at least two DNS servers assigned",
+          "Result": "",
+          "Learn": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances?tabs=redhat#specify-dns-servers"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "GlobalAI-ES",
+          "Location": "westeurope",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Service Name": "globalaies20224c6ab9",
+          "Broken": "false",
+          "Category": "Security",
+          "Subcategory": "HTTPS Only",
+          "Severity": "High",
+          "Description": "Storage Account should use HTTPS only",
+          "Result": "",
+          "Learn": "https://learn.microsoft.com/en-us/azure/storage/common/storage-require-secure-transfer"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "GlobalAI-ES",
+          "Location": "westeurope",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Service Name": "globalaies20224c6ab9",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "SKU",
+          "Severity": "High",
+          "Description": "Storage SKU",
+          "Result": "Standard_RAGRS",
+          "Learn": "https://learn.microsoft.com/en-us/rest/api/storagerp/srp_sku_types"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "GlobalAI-ES",
+          "Location": "westeurope",
+          "Type": "Microsoft.Storage/storageAccounts",
+          "Service Name": "globalaies20224c6ab9",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "SLA",
+          "Severity": "High",
+          "Description": "Storage should have a SLA",
+          "Result": "99.99%",
+          "Learn": "https://www.azure.cn/en-us/support/sla/storage/"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "Security",
+          "Location": "northeurope",
+          "Type": "Microsoft.ContainerRegistry/registries",
+          "Service Name": "azurebrains",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "SLA",
+          "Severity": "High",
+          "Description": "ContainerRegistry should have a SLA",
+          "Result": "99.95%",
+          "Learn": "https://www.azure.cn/en-us/support/sla/container-registry/"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "Security",
+          "Location": "northeurope",
+          "Type": "Microsoft.ContainerRegistry/registries",
+          "Service Name": "azurebrains",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "SKU",
+          "Severity": "High",
+          "Description": "ContainerRegistry SKU",
+          "Result": "Standard",
+          "Learn": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-skus"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "Security",
+          "Location": "westeurope",
+          "Type": "Microsoft.Logic/workflows",
+          "Service Name": "Defender-Logic-Alert",
+          "Broken": "false",
+          "Category": "Security",
+          "Subcategory": "Firewall",
+          "Severity": "High",
+          "Description": "Logic App should limit access to Http Triggers",
+          "Result": "",
+          "Learn": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-securing-a-logic-app?tabs=azure-portal#restrict-access-by-ip-address-range"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Resource Group": "Security",
+          "Location": "westeurope",
+          "Type": "Microsoft.Logic/workflows",
+          "Service Name": "Defender-Logic-Alert",
+          "Broken": "false",
+          "Category": "Reliability",
+          "Subcategory": "SLA",
+          "Severity": "High",
+          "Description": "Logic App should have a SLA",
+          "Result": "99.9%",
+          "Learn": "https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1"
+        }
+      ],
+      "defender": [
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "VirtualMachines",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "SqlServers",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "AppServices",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "StorageAccounts",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "SqlServerVirtualMachines",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "KubernetesService",
+          "Tier": "Free",
+          "Deprecated": "true"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "ContainerRegistry",
+          "Tier": "Free",
+          "Deprecated": "true"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "KeyVaults",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "Dns",
+          "Tier": "Standard",
+          "Deprecated": "true"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "Arm",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "OpenSourceRelationalDatabases",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "CosmosDbs",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "Containers",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "CloudPosture",
+          "Tier": "Standard",
+          "Deprecated": "false"
+        },
+        {
+          "Subscription": "a0e36c1b-7b3e-49ff-b98c-2e75c456d1a2",
+          "Name": "Api",
+          "Tier": "Free",
+          "Deprecated": "false"
+        }
+      ],
+      "_rid": "MwA0AP4-n9cBAAAAAAAAAA==",
+      "_self": "dbs/MwA0AA==/colls/MwA0AP4-n9c=/docs/MwA0AP4-n9cBAAAAAAAAAA==/",
+      "_etag": "\"6800dae6-0000-4700-0000-661b2b780000\"",
+      "_attachments": "attachments/",
+      "_ts": 1713056632
+    }
+  },
+  "query_rewrite": "El usuario quiere saber si su almacenamiento en Azure es seguro y si hay alguna recomendación específica para mejorar la seguridad del almacenamiento."
+}
