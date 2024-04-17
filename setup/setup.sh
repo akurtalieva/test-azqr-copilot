@@ -77,7 +77,7 @@ function write_config_json {
     echo "{\"subscription_id\": \"$subscriptionId\", \"resource_group\": \"$resourceGroupName\", \"workspace_name\": \"$mlProjectName\"}" > ../config.json
 }
 
-#login
+login
 check_login
 create_resource_group
 provision_resources
