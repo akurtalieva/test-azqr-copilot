@@ -13,5 +13,5 @@ def my_python_tool(customerId: str, conn: CustomConnection) -> str:
     response = container.read_item(item=customerId, partition_key=customerId)
     services = response["services"]
     services = sorted(services, key=lambda x: x["Severity"], reverse=True)
-    response["services"] = services[-3:]
+    response["services"] = services[-10:]
     return response
