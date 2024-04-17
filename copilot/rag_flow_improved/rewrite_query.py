@@ -20,7 +20,7 @@ def rewrite_query(query: str,
     jinja_template = os.path.join(os.path.dirname(__file__), "rewrite_query.jinja2")
     with open(jinja_template, encoding="utf-8") as f:
         template = Template(f.read())
-    prompt = template.render(query=query, chat_history=chat_history, customer_data=customer_data)
+    prompt = template.render(query=query, chat_history=chat_history, customer=customer_data)
     messages = [
         {
             "role": "system",
