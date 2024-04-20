@@ -1,5 +1,7 @@
 # Azqr Copilot 
 
+[![Open in vscode.dev](https://img.shields.io/badge/Open%20in-vscode.dev-blue)](https://github.com/alejandrolmeida/azqr-copilot)
+
 ¡Bienvenido al repositorio de Azqr Copilot! 🚀
 
 Estamos encantados de recibirte en nuestro repositorio de ideas, donde Azqr Copilot, tu asistente con IA generativa, está listo para ser tu compañero de aventuras en Azure. ¿Qué te espera aquí? ¡Déjanos contarte!
