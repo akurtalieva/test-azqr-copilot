@@ -4,6 +4,7 @@ tiktoken
 openai
 promptflow==1.5.0
 promptflow-tools
+promptflow.azure
 azure-cosmos
 azure-search-documents
 langchain
