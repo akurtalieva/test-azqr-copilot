@@ -13,6 +13,7 @@ RUN conda clean --all --yes
 
 COPY .devcontainer/requirements.txt /tmp/conda-tmp/requirements.txt
 RUN /bin/bash -c "source activate azureai && pip install --no-cache-dir -r /tmp/conda-tmp/requirements.txt" && \
+    pip install chainlit==0.7.700 --ignore-installed && \
     rm -rf /tmp/conda-tmp/
 
 # Use WORKDIR to create directory
