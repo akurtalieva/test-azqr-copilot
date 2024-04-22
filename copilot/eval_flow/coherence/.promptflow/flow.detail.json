@@ -1,0 +1,608 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "question": "No se si tengo bien configurados mis recursos en Azure",
+        "answer": "Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍",
+        "chat_history": [
+          {
+            "inputs": {
+              "customerId": "6",
+              "question": "puedes decirme como securizar esa LogicApp?"
+            },
+            "outputs": {
+              "answer": "¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍"
+            }
+          },
+          {
+            "inputs": {
+              "customerId": "6",
+              "question": "Y sobre el ContainerRegistry?"
+            },
+            "outputs": {
+              "answer": "¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍"
+            }
+          }
+        ]
+      },
+      "output": {
+        "gpt_coherence": 5.0
+      },
+      "metrics": {
+        "gpt_coherence": 5.0,
+        "gpt_coherence_pass_rate(%)": 100.0
+      },
+      "request": null,
+      "parent_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a",
+      "root_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a",
+      "source_run_id": null,
+      "flow_id": "QnA_gpt_coherence_eval",
+      "start_time": "2024-04-20T11:45:59.172010Z",
+      "end_time": "2024-04-20T11:46:00.183649Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1713613559.17201,
+          "end_time": 1713613560.183649,
+          "children": [
+            {
+              "name": "AzureOpenAI.chat",
+              "type": "Function",
+              "inputs": {
+                "prompt": "System:\nYou are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric.\n\nUser:\nCoherence of an answer is measured by how well all the sentences fit together and sound naturally as a whole. Consider the overall quality of the answer when evaluating coherence. Given the question and answer, score the coherence of answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks coherence\nTwo stars: the answer mostly lacks coherence\nThree stars: the answer is partially coherent\nFour stars: the answer is mostly coherent\nFive stars: the answer has perfect coherency\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nquestion: What is your favorite indoor activity and why do you enjoy it?\nanswer: I like pizza. The sun is shining.\nstars: 1\n\nquestion: Can you describe your favorite movie without giving away any spoilers?\nanswer: It is a science fiction movie. There are dinosaurs. The actors eat cake. People must stop the villain.\nstars: 2\n\nquestion: What are some benefits of regular exercise?\nanswer: Regular exercise improves your mood. A good workout also helps you sleep better. Trees are green.\nstars: 3\n\nquestion: How do you cope with stress in your daily life?\nanswer: I usually go for a walk to clear my head. Listening to music helps me relax as well. Stress is a part of life, but we can manage it through some activities.\nstars: 4\n\nquestion: What can you tell me about climate change and its effects on the environment?\nanswer: Climate change has far-reaching effects on the environment. Rising temperatures result in the melting of polar ice caps, contributing to sea-level rise. Additionally, more frequent and severe weather events, such as hurricanes and heatwaves, can cause disruption to ecosystems and human societies alike.\nstars: 5\n\nconversation_history: \n{% for item in chat_history %}\n  - user: {{ item.inputs }}\n    assistant: {{ item.outputs }}\n{% endfor %} \nquestion: {{question}}\nanswer: {{answer}}\nstars:",
+                "question": "No se si tengo bien configurados mis recursos en Azure",
+                "answer": "Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍",
+                "max_tokens": 256,
+                "deployment_name": "gpt-4",
+                "temperature": 0.0,
+                "chat_history": [
+                  {
+                    "inputs": {
+                      "customerId": "6",
+                      "question": "puedes decirme como securizar esa LogicApp?"
+                    },
+                    "outputs": {
+                      "answer": "¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍"
+                    }
+                  },
+                  {
+                    "inputs": {
+                      "customerId": "6",
+                      "question": "Y sobre el ContainerRegistry?"
+                    },
+                    "outputs": {
+                      "answer": "¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍"
+                    }
+                  }
+                ]
+              },
+              "output": "5",
+              "start_time": 1713613559.176308,
+              "end_time": 1713613560.177097,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai_chat",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-4",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+                      },
+                      {
+                        "role": "user",
+                        "content": "Coherence of an answer is measured by how well all the sentences fit together and sound naturally as a whole. Consider the overall quality of the answer when evaluating coherence. Given the question and answer, score the coherence of answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks coherence\nTwo stars: the answer mostly lacks coherence\nThree stars: the answer is partially coherent\nFour stars: the answer is mostly coherent\nFive stars: the answer has perfect coherency\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nquestion: What is your favorite indoor activity and why do you enjoy it?\nanswer: I like pizza. The sun is shining.\nstars: 1\n\nquestion: Can you describe your favorite movie without giving away any spoilers?\nanswer: It is a science fiction movie. There are dinosaurs. The actors eat cake. People must stop the villain.\nstars: 2\n\nquestion: What are some benefits of regular exercise?\nanswer: Regular exercise improves your mood. A good workout also helps you sleep better. Trees are green.\nstars: 3\n\nquestion: How do you cope with stress in your daily life?\nanswer: I usually go for a walk to clear my head. Listening to music helps me relax as well. Stress is a part of life, but we can manage it through some activities.\nstars: 4\n\nquestion: What can you tell me about climate change and its effects on the environment?\nanswer: Climate change has far-reaching effects on the environment. Rising temperatures result in the melting of polar ice caps, contributing to sea-level rise. Additionally, more frequent and severe weather events, such as hurricanes and heatwaves, can cause disruption to ecosystems and human societies alike.\nstars: 5\n\nconversation_history: \n  - user: {'customerId': '6', 'question': 'puedes decirme como securizar esa LogicApp?'}\n    assistant: {'answer': '¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍'}\n  - user: {'customerId': '6', 'question': 'Y sobre el ContainerRegistry?'}\n    assistant: {'answer': '¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍'}\n \nquestion: No se si tengo bien configurados mis recursos en Azure\nanswer: Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍\nstars:"
+                      }
+                    ],
+                    "temperature": 0.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "user": "",
+                    "max_tokens": 256
+                  },
+                  "output": {
+                    "id": "chatcmpl-9G3SQT1uTSfFFf378SjLmjJMh6FpE",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "5",
+                          "role": "assistant",
+                          "function_call": null,
+                          "tool_calls": null
+                        },
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ],
+                    "created": 1713613566,
+                    "model": "gpt-4",
+                    "object": "chat.completion",
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 1,
+                      "prompt_tokens": 964,
+                      "total_tokens": 965
+                    },
+                    "prompt_filter_results": [
+                      {
+                        "prompt_index": 0,
+                        "content_filter_results": {
+                          "hate": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "self_harm": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "sexual": {
+                            "filtered": false,
+                            "severity": "safe"
+                          },
+                          "violence": {
+                            "filtered": false,
+                            "severity": "safe"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "start_time": 1713613559.185878,
+                  "end_time": 1713613560.176791,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "696d8c43-7a26-42cc-9c7e-1e248ae1af92",
+                  "id": "a12a4ab3-664d-42c5-98a4-6dcb8a15c2a5",
+                  "function": "openai.resources.chat.completions.Completions.create",
+                  "system_metrics": {
+                    "completion_tokens": 1,
+                    "prompt_tokens": 964,
+                    "total_tokens": 965
+                  }
+                }
+              ],
+              "node_name": "coherence_score",
+              "parent_id": "",
+              "id": "696d8c43-7a26-42cc-9c7e-1e248ae1af92",
+              "function": "AzureOpenAI.chat",
+              "system_metrics": {
+                "completion_tokens": 1,
+                "prompt_tokens": 964,
+                "total_tokens": 965
+              }
+            },
+            {
+              "name": "concat_results",
+              "type": "Function",
+              "inputs": {
+                "coherence_score": "5"
+              },
+              "output": {
+                "gpt_coherence": 5.0,
+                "gpt_coherence_pass_rate": 1
+              },
+              "start_time": 1713613560.181599,
+              "end_time": 1713613560.182422,
+              "error": null,
+              "children": [],
+              "node_name": "concat_scores",
+              "parent_id": "",
+              "id": "fc8eceb7-35ca-4bbf-940b-44d86979a71c",
+              "function": "concat_results",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 1.011639,
+            "prompt_tokens": 964,
+            "completion_tokens": 1,
+            "total_tokens": 965
+          },
+          "inputs": {
+            "question": "No se si tengo bien configurados mis recursos en Azure",
+            "answer": "Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍",
+            "chat_history": [
+              {
+                "inputs": {
+                  "customerId": "6",
+                  "question": "puedes decirme como securizar esa LogicApp?"
+                },
+                "outputs": {
+                  "answer": "¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍"
+                }
+              },
+              {
+                "inputs": {
+                  "customerId": "6",
+                  "question": "Y sobre el ContainerRegistry?"
+                },
+                "outputs": {
+                  "answer": "¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍"
+                }
+              }
+            ]
+          },
+          "output": {
+            "gpt_coherence": 5.0
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 1.011639,
+        "prompt_tokens": 964,
+        "completion_tokens": 1,
+        "total_tokens": 965
+      },
+      "result": {
+        "gpt_coherence": 5.0
+      },
+      "upload_metrics": false,
+      "otel_trace_id": "6b5027421e53a4a9dc55444dc21f2591",
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "coherence_score",
+      "flow_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a",
+      "run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a_coherence_score_0",
+      "status": "Completed",
+      "inputs": {
+        "question": "No se si tengo bien configurados mis recursos en Azure",
+        "answer": "Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍",
+        "max_tokens": 256,
+        "deployment_name": "gpt-4",
+        "temperature": 0.0,
+        "chat_history": [
+          {
+            "inputs": {
+              "customerId": "6",
+              "question": "puedes decirme como securizar esa LogicApp?"
+            },
+            "outputs": {
+              "answer": "¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍"
+            }
+          },
+          {
+            "inputs": {
+              "customerId": "6",
+              "question": "Y sobre el ContainerRegistry?"
+            },
+            "outputs": {
+              "answer": "¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍"
+            }
+          }
+        ]
+      },
+      "output": "5",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a_0",
+      "start_time": "2024-04-20T11:45:59.176068Z",
+      "end_time": "2024-04-20T11:46:00.180041Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Function",
+          "inputs": {
+            "prompt": "System:\nYou are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric.\n\nUser:\nCoherence of an answer is measured by how well all the sentences fit together and sound naturally as a whole. Consider the overall quality of the answer when evaluating coherence. Given the question and answer, score the coherence of answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks coherence\nTwo stars: the answer mostly lacks coherence\nThree stars: the answer is partially coherent\nFour stars: the answer is mostly coherent\nFive stars: the answer has perfect coherency\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nquestion: What is your favorite indoor activity and why do you enjoy it?\nanswer: I like pizza. The sun is shining.\nstars: 1\n\nquestion: Can you describe your favorite movie without giving away any spoilers?\nanswer: It is a science fiction movie. There are dinosaurs. The actors eat cake. People must stop the villain.\nstars: 2\n\nquestion: What are some benefits of regular exercise?\nanswer: Regular exercise improves your mood. A good workout also helps you sleep better. Trees are green.\nstars: 3\n\nquestion: How do you cope with stress in your daily life?\nanswer: I usually go for a walk to clear my head. Listening to music helps me relax as well. Stress is a part of life, but we can manage it through some activities.\nstars: 4\n\nquestion: What can you tell me about climate change and its effects on the environment?\nanswer: Climate change has far-reaching effects on the environment. Rising temperatures result in the melting of polar ice caps, contributing to sea-level rise. Additionally, more frequent and severe weather events, such as hurricanes and heatwaves, can cause disruption to ecosystems and human societies alike.\nstars: 5\n\nconversation_history: \n{% for item in chat_history %}\n  - user: {{ item.inputs }}\n    assistant: {{ item.outputs }}\n{% endfor %} \nquestion: {{question}}\nanswer: {{answer}}\nstars:",
+            "question": "No se si tengo bien configurados mis recursos en Azure",
+            "answer": "Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍",
+            "max_tokens": 256,
+            "deployment_name": "gpt-4",
+            "temperature": 0.0,
+            "chat_history": [
+              {
+                "inputs": {
+                  "customerId": "6",
+                  "question": "puedes decirme como securizar esa LogicApp?"
+                },
+                "outputs": {
+                  "answer": "¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍"
+                }
+              },
+              {
+                "inputs": {
+                  "customerId": "6",
+                  "question": "Y sobre el ContainerRegistry?"
+                },
+                "outputs": {
+                  "answer": "¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍"
+                }
+              }
+            ]
+          },
+          "output": "5",
+          "start_time": 1713613559.176308,
+          "end_time": 1713613560.177097,
+          "error": null,
+          "children": [
+            {
+              "name": "openai_chat",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-4",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are an AI assistant. You will be given the definition of an evaluation metric for assessing the quality of an answer in a question-answering task. Your job is to compute an accurate evaluation score using the provided evaluation metric."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Coherence of an answer is measured by how well all the sentences fit together and sound naturally as a whole. Consider the overall quality of the answer when evaluating coherence. Given the question and answer, score the coherence of answer between one to five stars using the following rating scale:\nOne star: the answer completely lacks coherence\nTwo stars: the answer mostly lacks coherence\nThree stars: the answer is partially coherent\nFour stars: the answer is mostly coherent\nFive stars: the answer has perfect coherency\n\nThis rating value should always be an integer between 1 and 5. So the rating produced should be 1 or 2 or 3 or 4 or 5.\n\nquestion: What is your favorite indoor activity and why do you enjoy it?\nanswer: I like pizza. The sun is shining.\nstars: 1\n\nquestion: Can you describe your favorite movie without giving away any spoilers?\nanswer: It is a science fiction movie. There are dinosaurs. The actors eat cake. People must stop the villain.\nstars: 2\n\nquestion: What are some benefits of regular exercise?\nanswer: Regular exercise improves your mood. A good workout also helps you sleep better. Trees are green.\nstars: 3\n\nquestion: How do you cope with stress in your daily life?\nanswer: I usually go for a walk to clear my head. Listening to music helps me relax as well. Stress is a part of life, but we can manage it through some activities.\nstars: 4\n\nquestion: What can you tell me about climate change and its effects on the environment?\nanswer: Climate change has far-reaching effects on the environment. Rising temperatures result in the melting of polar ice caps, contributing to sea-level rise. Additionally, more frequent and severe weather events, such as hurricanes and heatwaves, can cause disruption to ecosystems and human societies alike.\nstars: 5\n\nconversation_history: \n  - user: {'customerId': '6', 'question': 'puedes decirme como securizar esa LogicApp?'}\n    assistant: {'answer': '¡Por supuesto, DataExperts! 😊 Para asegurar tu LogicApp, te recomendaría que restrinjas el acceso a los disparadores Http. Esto puede ser realizado limitando el acceso por rango de direcciones IP. Puedes encontrar más detalles sobre cómo hacer esto en este enlace. Además, es importante que tu LogicApp tenga un Acuerdo de Nivel de Servicio (SLA), puedes encontrar más información sobre esto aquí: SLA para servicios en línea. Espero que esto sea de ayuda. ¡No dudes en preguntar si tienes más dudas! 😊👍'}\n  - user: {'customerId': '6', 'question': 'Y sobre el ContainerRegistry?'}\n    assistant: {'answer': '¡Hola DataExperts! 👋 Para tu ContainerRegistry en Northeurope, te recomendaría revisar su SKU. Esto puede ayudarte a asegurarte de que estás utilizando la versión que más se adapte a tus necesidades. Aquí puedes encontrar más detalles al respecto: ContainerRegistry SKU. 🚀 Además, considera el uso de bloqueos de recurso para proteger tu Container Registry de la eliminación y utiliza la autenticación integrada de Microsoft Entra para mayor seguridad. 🛡️ Puedes encontrar más detalles en los [documentos de referencia](item number: 318). Espero que esta información sea útil para ti, DataExperts. ¡No dudes en preguntar si tienes más preguntas! 😊👍'}\n \nquestion: No se si tengo bien configurados mis recursos en Azure\nanswer: Hola DataExperts! 😊 He revisado las recomendaciones de Azqr y aquí están algunas sugerencias para mejorar la configuración de tus recursos de Azure: ContainerRegistry SKU: Parece que necesitas revisar el SKU de tu Container Registry. Puedes encontrar más detalles sobre esto en este enlace. Logic App - Firewall: Se recomienda limitar el acceso a los disparadores Http de tu Logic App. Aquí puedes encontrar cómo hacerlo: link. Logic App - SLA: Tu Logic App debería tener un SLA. Más información al respecto en este enlace. Espero que esto sea útil para ti! No dudes en preguntar si tienes alguna otra duda. 😊👍\nstars:"
+                  }
+                ],
+                "temperature": 0.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "user": "",
+                "max_tokens": 256
+              },
+              "output": {
+                "id": "chatcmpl-9G3SQT1uTSfFFf378SjLmjJMh6FpE",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "5",
+                      "role": "assistant",
+                      "function_call": null,
+                      "tool_calls": null
+                    },
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ],
+                "created": 1713613566,
+                "model": "gpt-4",
+                "object": "chat.completion",
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 1,
+                  "prompt_tokens": 964,
+                  "total_tokens": 965
+                },
+                "prompt_filter_results": [
+                  {
+                    "prompt_index": 0,
+                    "content_filter_results": {
+                      "hate": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "self_harm": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "sexual": {
+                        "filtered": false,
+                        "severity": "safe"
+                      },
+                      "violence": {
+                        "filtered": false,
+                        "severity": "safe"
+                      }
+                    }
+                  }
+                ]
+              },
+              "start_time": 1713613559.185878,
+              "end_time": 1713613560.176791,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "696d8c43-7a26-42cc-9c7e-1e248ae1af92",
+              "id": "a12a4ab3-664d-42c5-98a4-6dcb8a15c2a5",
+              "function": "openai.resources.chat.completions.Completions.create",
+              "system_metrics": {
+                "completion_tokens": 1,
+                "prompt_tokens": 964,
+                "total_tokens": 965
+              }
+            }
+          ],
+          "node_name": "coherence_score",
+          "parent_id": "",
+          "id": "696d8c43-7a26-42cc-9c7e-1e248ae1af92",
+          "function": "AzureOpenAI.chat",
+          "system_metrics": {
+            "completion_tokens": 1,
+            "prompt_tokens": 964,
+            "total_tokens": 965
+          }
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 1,
+        "prompt_tokens": 964,
+        "total_tokens": 965,
+        "duration": 1.003973
+      },
+      "result": "5",
+      "message_format": "basic"
+    },
+    {
+      "node": "concat_scores",
+      "flow_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a",
+      "run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a_concat_scores_0",
+      "status": "Completed",
+      "inputs": {
+        "coherence_score": "5"
+      },
+      "output": {
+        "gpt_coherence": 5.0,
+        "gpt_coherence_pass_rate": 1
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a_0",
+      "start_time": "2024-04-20T11:46:00.181451Z",
+      "end_time": "2024-04-20T11:46:00.182930Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "concat_results",
+          "type": "Function",
+          "inputs": {
+            "coherence_score": "5"
+          },
+          "output": {
+            "gpt_coherence": 5.0,
+            "gpt_coherence_pass_rate": 1
+          },
+          "start_time": 1713613560.181599,
+          "end_time": 1713613560.182422,
+          "error": null,
+          "children": [],
+          "node_name": "concat_scores",
+          "parent_id": "",
+          "id": "fc8eceb7-35ca-4bbf-940b-44d86979a71c",
+          "function": "concat_results",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001479
+      },
+      "result": {
+        "gpt_coherence": 5.0,
+        "gpt_coherence_pass_rate": 1
+      },
+      "message_format": "basic"
+    },
+    {
+      "node": "aggregate_variants_results",
+      "flow_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a",
+      "run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a_aggregate_variants_results_reduce",
+      "status": "Completed",
+      "inputs": {
+        "results": [
+          {
+            "gpt_coherence": 5.0,
+            "gpt_coherence_pass_rate": 1
+          }
+        ]
+      },
+      "output": {
+        "gpt_coherence": 5.0,
+        "gpt_coherence_pass_rate": 100.0
+      },
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "5396c655-92f5-45d3-87ab-f5a383eced9a",
+      "start_time": "2024-04-20T11:46:00.185905Z",
+      "end_time": "2024-04-20T11:46:00.188809Z",
+      "index": null,
+      "api_calls": [
+        {
+          "name": "aggregate_variants_results",
+          "type": "Function",
+          "inputs": {
+            "results": [
+              {
+                "gpt_coherence": 5.0,
+                "gpt_coherence_pass_rate": 1
+              }
+            ]
+          },
+          "output": {
+            "gpt_coherence": 5.0,
+            "gpt_coherence_pass_rate": 100.0
+          },
+          "start_time": 1713613560.186015,
+          "end_time": 1713613560.188065,
+          "error": null,
+          "children": [],
+          "node_name": "aggregate_variants_results",
+          "parent_id": "",
+          "id": "f6013bb7-b3fe-4ea5-b128-f188ae9ec35b",
+          "function": "aggregate_variants_results",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.002904
+      },
+      "result": {
+        "gpt_coherence": 5.0,
+        "gpt_coherence_pass_rate": 100.0
+      },
+      "message_format": "basic"
+    }
+  ]
+}
