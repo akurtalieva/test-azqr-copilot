@@ -14,4 +14,4 @@ sudo curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 conda init bash
 echo "alias ll='ls -alF'" >> ~/.bashrc
 echo 'eval "$(oh-my-posh init bash --config /usr/local/share/omp-templates/almeida.omp.json)" ' >> ~/.bashrc
-echo "conda activate azureai" >> ~/.bashr_profile
+echo "conda activate azureai" >> ~/.bash_profile
