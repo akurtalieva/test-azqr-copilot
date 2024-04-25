@@ -2,9 +2,9 @@ requests
 python-dotenv
 tiktoken
 openai
-promptflow==1.5.0
+promptflow
 promptflow-tools
-promptflow.azure
+promptflow-azure
 azure-cosmos
 azure-search-documents
 langchain
@@ -13,7 +13,12 @@ keyrings.alt
 unstructured
 markdown
 httpx==0.27.0
-azure-ai-resources==1.0.0b1
-azure-identity==1.15.0
+azure-ai-ml
+azure-storage-blob[aio]
+azure-ai-resources
+azure-identity
 azure-ai-textanalytics
 azure-ai-generative
+dataclasses-json>=0.5.7,<0.6.0
+chainlit
+pyyaml
