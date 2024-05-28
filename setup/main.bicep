@@ -341,7 +341,7 @@ resource cosmos_database_container 'Microsoft.DocumentDB/databaseAccounts/sqlDat
 }
 
 resource keyvault 'Microsoft.KeyVault/vaults@2023-07-01' = {
-  name: 'kv-${project}'
+  name: 'test-kv-${project}'
   location: location
   properties: {
     sku: {

@@ -14,6 +14,16 @@ function login {
         source "$scriptDir/../.env"
     fi
 
+    if [ -z "$TENANT_ID" ]; then
+        echo "TENANT_ID is not set. Please check your .env file."
+        exit 1
+    fi
+
+    if [ -z "$SUBSCRIPTION_ID" ]; then
+        echo "SUBSCRIPTION_ID is not set. Please check your .env file."
+        exit 1
+    fi
+
     az login --use-device-code -t $TENANT_ID
     az account set --subscription $SUBSCRIPTION_ID
 }
