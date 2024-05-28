@@ -3,7 +3,7 @@
 set -e
 
 resourceGroupLocation="swedencentral"
-resourceGroupName="azqr-rg"
+resourceGroupName="test-azqr-rg"
 deploymentName="azqr-deployment"
 scriptDir=$(dirname "$(realpath "$0")")
 
